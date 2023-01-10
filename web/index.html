@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Management-System</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="theme" onclick="change_theme()"><i id="gear" class="fa fa-star" aria-hidden="true"></i></div>
+    <div id="login-box">
+        <div id="pic"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+
+        <div class="input">Username<input type="text" id="input1" class="input-data" placeholder="Username"></div>
+        <br><br><br>
+        <div class="input">Password<input type="text" id="input2" class="input-data" placeholder="Password"></div>
+        <br><br><br>
+        <button class="submit" onclick="send()">Log-in</button>
+
+    </div>
+
+    <div id="main-page">
+        <div id="log-out" onclick="logout()"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+        <div id="pic2"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+        <div id="main-button-window">
+            <div class="main-buttons" id="add-record" onclick="addRecordPage()">
+                <h3>Add record</h3>
+                <p>
+                    Click this button to Add Records in the Student's Database.
+                </p>
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </div>
+            <div class="main-buttons" id="delete-student" onclick="deleteExistingRecords()">
+                <h3>Delete record</h3>
+                <p>
+                    Click this to Delete Record form student's Database.
+                </p>
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </div>
+            <div class="main-buttons" id="show-record" onclick="showExistingRecords()">
+                <h3>Show record</h3>
+                <p>
+                    Click this to search a record from Student's Database.
+                </p>
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </div>
+            <div class="main-buttons" id="clear-data" onclick="clearData()">
+                <h3>Clear records</h3>
+                <p>
+                    Click this button to clear the whole database.
+                </p>
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-record-page">
+        <div id="add-record-page-back" onclick="Add_back()"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+        <h1>Add Record</h1>
+        <div id="add-record-page-main">
+
+            <div class="input-add-record">
+                <p>First-name</p>
+                <input type="text" id="firstname-add-record" class="input-data" placeholder="First-name">
+            </div>
+
+            <div class="input-add-record">
+                <p>Last-name</p>
+                <input type="text" id="lastname-add-record" class="input-data" placeholder="Last-name">
+            </div>
+            
+            <div class="input-add-record">
+                <p>Roll No</p>
+                <input type="text" id="roll-add-record" class="input-data" placeholder="Roll No">
+            </div>
+        
+            <div class="input-add-record">
+                <p>Age</p>
+                <input type="text" id="age-add-record" class="input-data" placeholder="Age">
+            </div>
+                    
+            <div class="input-add-record">
+                <p>Gender</p>
+                <select id="gender-add-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="input-add-record">
+                <p>Dept</p>
+                <select id="dept-add-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="BCA">BCA</option>
+                    <option value="ECE">ECE</option>
+                    <option value="CE">CE</option>
+                    <option value="IT">IT</option>
+                </select>
+            </div>
+
+            <div class="input-add-record">
+                <p>Year</p>
+                <select id="year-add-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                </select>
+            </div>  
+        </div>
+        <button class="submit" id="create" onclick="Add_data()">Create</button>
+    </div>
+
+    <div id="show-record-page">
+        <div id="show-record-page-back" onclick="Show_back()"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+        <h1>Show Record</h1>
+        <div id="show-record-page-main">
+
+            <div class="input-show-record">
+                <p>First-name</p>
+                <input type="text" id="firstname-show-record" class="input-data" placeholder="First-name">
+            </div>
+
+            <div class="input-show-record">
+                <p>Last-name</p>
+                <input type="text" id="lastname-show-record" class="input-data" placeholder="Last-name">
+            </div>
+            
+            <div class="input-show-record">
+                <p>Roll No</p>
+                <input type="text" id="roll-show-record" class="input-data" placeholder="Roll No">
+            </div>
+        
+            <div class="input-show-record">
+                <p>Age</p>
+                <input type="text" id="age-show-record" class="input-data" placeholder="Age">
+            </div>
+                    
+            <div class="input-show-record">
+                <p>Gender</p>
+                <select id="gender-show-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="input-show-record">
+                <p>Dept</p>
+                <select id="dept-show-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="BCA">BCA</option>
+                    <option value="ECE">ECE</option>
+                    <option value="CE">CE</option>
+                    <option value="IT">IT</option>
+                </select>
+            </div>
+
+            <div class="input-show-record">
+                <p>Year</p>
+                <select id="year-show-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                </select>
+            </div>  
+        </div>
+        <button class="submit" id="create" onclick="showData(1, 0, 1)">Show Data</button>
+    </div>
+
+    <div id="delete-record-page">
+        <div id="delete-record-page-back" onclick="Delete_back()"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>        <h1>Delete Record</h1>
+        <div id="delete-record-page-main">
+
+            <div class="input-delete-record">
+                <p>First-name</p>
+                <input type="text" id="firstname-delete-record" class="input-data" placeholder="First-name">
+            </div>
+
+            <div class="input-delete-record">
+                <p>Last-name</p>
+                <input type="text" id="lastname-delete-record" class="input-data" placeholder="Last-name">
+            </div>
+            
+            <div class="input-delete-record">
+                <p>Roll No</p>
+                <input type="text" id="roll-delete-record" class="input-data" placeholder="Roll No">
+            </div>
+        
+            <div class="input-delete-record" id="age">
+                <p>Age</p>
+                <input type="text" id="age-delete-record" class="input-data" placeholder="Age">
+            </div>
+                    
+            <div class="input-delete-record">
+                <p>Gender</p>
+                <select id="gender-delete-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="input-delete-record">
+                <p>Dept</p>
+                <select id="dept-delete-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="BCA">BCA</option>
+                    <option value="ECE">ECE</option>
+                    <option value="CE">CE</option>
+                    <option value="IT">IT</option>
+                </select>
+            </div>
+
+            <div class="input-delete-record">
+                <p>Year</p>
+                <select id="year-delete-record" class="dropdown">
+                    <option value="--">--</option>
+                    <option value="1">1st</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                </select>
+            </div>  
+        </div>
+        <button class="submit" id="create" onclick="Delete()">delete Data</button>
+    </div>
+
+    <div id="table-content">
+        <table>
+            <thead>
+                <td class = "heading" >Roll No.</td>
+                <td class = "heading" >First-Name</td>
+                <td class = "heading" >Last-Name</td>
+                <td class = "heading" >Age</td>
+                <td class = "heading" >Gender</td>
+                <td class = "heading" >Department</td>
+                <td class = "heading" >Year</td>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <div id="buttons-np">
+            <div id="previous" onclick="showData(1, -1, 0)">Previous</div>
+            <div id="ok" onclick="Ok_button()">Ok</div>
+            <div id="next" onclick="showData(1, 1, 0)">Next</div>
+        </div>
+    </div>
+
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="./eel.js"></script>
+    <script src="./main.js"></script>
+</html>
