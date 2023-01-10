@@ -1,14 +1,21 @@
 # Student-Database-Management-system
 
-Dependencies
+## Dependencies
 '''
 pip install -r requirement.txt
 '''
 
-## Log-in Page
-![image](https://user-images.githubusercontent.com/79639825/211521786-7eb66de5-a45c-46ec-b3bb-fbede2d17e12.png)
+## For adding Random Data in Database
+Open inspect element -> console (then type) format(eel.FillRandomData(number_of_studnets_dept)();)
+'''
+eel.FillRandomData(150)();
+'''
 
 <br>
+
+
+## Log-in Page
+![image](https://user-images.githubusercontent.com/79639825/211521786-7eb66de5-a45c-46ec-b3bb-fbede2d17e12.png)
 
 ## Main Page
 ![image](https://user-images.githubusercontent.com/79639825/211521937-6605e195-035f-4271-b74e-b5f7f6cc3bbd.png)
