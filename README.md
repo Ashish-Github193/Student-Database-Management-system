@@ -1,4 +1,5 @@
 # Student-Database-Management-system
+Student Database Management System is a software that helps institutions store, maintain, process, and compile student data, thus enabling them to operate smoothly. It ensures data-driven collaboration between school stakeholders like teachers, students, parents, and admin staff.
 
 ## Dependencies
 ```
