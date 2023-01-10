@@ -1,15 +1,15 @@
 # Student-Database-Management-system
 
 ## Dependencies
-'''
+```
 pip install -r requirement.txt
-'''
+```
 
 ## For adding Random Data in Database
 Open inspect element -> console (then type) format(eel.FillRandomData(number_of_studnets_dept)();)
-'''
+```
 eel.FillRandomData(150)();
-'''
+```
 
 <br>
 
